@@ -1,8 +1,24 @@
-body {
+html,
+body,
+#root {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  margin-block-start: unset;
+  margin-block-end: unset;
+}
+
+#app-content {
+  margin-left: 117px;
+  margin-top: 91px;
+  margin-bottom: 50px;
 }

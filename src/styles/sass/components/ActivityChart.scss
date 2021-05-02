@@ -1,0 +1,55 @@
+.activity-legend-container {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+
+  .activity-legend-title {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .activity-legend-payload-list {
+    display: flex;
+
+    .activity-legend-payload-block {
+      margin-right: 32px;
+      &:last-child {
+        margin-right: unset;
+      }
+
+      .activity-legend-payload-pin {
+        width: 8px;
+        height: 8px;
+        display: inline-block;
+        margin-right: 10px;
+        border-radius: 50%;
+      }
+
+      .activity-legend-payload-value {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        color: #74798c;
+      }
+    }
+  }
+}
+
+.tooltip-box {
+  background-color: #e60000;
+  color: #ffffff;
+
+  padding: 4px 12px;
+
+  .tooltip-label {
+    font-size: 7px;
+    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: 7px;
+
+    &:last-of-type {
+      margin-bottom: unset;
+    }
+  }
+}

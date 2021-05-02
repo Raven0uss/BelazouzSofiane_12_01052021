@@ -1,8 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+/* Utils */
+@import "./utils/variables.scss";
+
 /* Root */
 @import "./root/reset.scss";
-@import "./root/App.scss";
+@import "./root/Profile.scss";
 
 /* Layout */
 @import "./layout/Header.scss";
+@import "./layout/SideBar.scss";
 
 /* Components */
+@import "./components/ActivityChart.scss";
+@import "./components/CounterCard.scss";
+@import "./components/CounterSummary.scss";
+@import "./components/PerformanceChart.scss";
+@import "./components/ScoreChart.scss";
+@import "./components/SessionsChart.scss";
+@import "./components/SportIcon.scss";
