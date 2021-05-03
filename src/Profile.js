@@ -7,6 +7,10 @@ import {
   userId,
 } from "./api";
 import ActivityChart from "./components/ActivityChart";
+import CountersSummary from "./components/CountersSummary";
+import PerformanceChart from "./components/PerformanceChart";
+import ScoreChart from "./components/ScoreChart";
+import SessionsChart from "./components/SessionsChart";
 
 class Profile extends React.Component {
   constructor(props) {
@@ -55,7 +59,6 @@ class Profile extends React.Component {
   render() {
     if (this.state.loading) return <div>Loading...</div>;
     if (this.state.error) return <div>An error occured</div>;
-    console.log(this.state);
     return (
       <div id="profile-container">
         <div>
@@ -79,11 +82,18 @@ class Profile extends React.Component {
             <div className="charts-activity-container">
               <ActivityChart data={this.state.activity.sessions} />
             </div>
-            <div className="charts-b"></div>
-            <div className="charts-c">
+            <div className="charts-b">
+              <SessionsChart sessions={this.state.averageSessions.sessions} />
             </div>
-            <div className="charts-d"></div>
-            <div className="charts-e"></div>
+            <div className="charts-c">
+              <PerformanceChart performances={this.state.performance} />
+            </div>
+            <div className="charts-d">
+              <ScoreChart scorePercentage={this.state.user.todayScore} />
+            </div>
+            <div className="charts-e">
+              <CountersSummary data={this.state.user.keyData} />
+            </div>
           </div>
         </div>
       </div>

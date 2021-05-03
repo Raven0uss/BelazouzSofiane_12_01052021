@@ -32,6 +32,7 @@
   grid-row-gap: 30px;
   margin-left: 109px;
   margin-right: 90px;
+  //   max-width: 1440px;
 
   .charts-activity-container {
     grid-area: 1 / 1 / 2 / 4;
@@ -40,6 +41,7 @@
     border-radius: 5px;
     box-shadow: 0px 2px 4px 0px #00000005;
     width: 100%;
+    // max-width: 940px;
   }
 
   .charts-b {
@@ -47,21 +49,27 @@
     background-color: red;
     aspect-ratio: 1;
     max-width: 258px;
+    width: 100%;
     max-height: 258px;
+    // align-self: flex-end;
   }
   .charts-c {
     grid-area: 2 / 2 / 3 / 3;
     background-color: blue;
     aspect-ratio: 1;
     max-width: 258px;
+    width: 100%;
     max-height: 258px;
   }
   .charts-d {
     grid-area: 2 / 3 / 3 / 4;
-    background-color: pink;
-    aspect-ratio: 1;
+    background-color: #fbfbfb;
+    border-radius: 5px;
+    width: 100%;
     max-width: 258px;
     max-height: 258px;
+    aspect-ratio: 1;
+
   }
   .charts-e {
     grid-area: 1 / 4 / 3 / 5;
@@ -71,15 +79,15 @@
 }
 
 // Aspect ratio doesn't work on Firefox, so I had to do some math to get
-@-moz-document url-prefix() {
-  .charts-b,
-  .charts-c,
-  .charts-d {
-    height: calc(
-      154.5px + min(calc(100vh - 780px), calc(100vw - 1024px)) * 0.25
-    );
-    width: calc(
-      154.5px + min(calc(100vh - 780px), calc(100vw - 1024px)) * 0.25
-    );
-  }
-}
+// @-moz-document url-prefix() {
+//   .charts-b,
+//   .charts-c,
+//   .charts-d {
+//     height: calc(
+//       154.5px + min(calc(100vh - 780px), calc(100vw - 1024px)) * 0.25
+//     );
+//     width: calc(
+//       154.5px + min(calc(100vh - 780px), calc(100vw - 1024px)) * 0.25
+//     );
+//   }
+// }

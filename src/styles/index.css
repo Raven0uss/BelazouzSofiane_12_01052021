@@ -59,30 +59,28 @@ p {
     background-color: red;
     aspect-ratio: 1;
     max-width: 258px;
+    width: 100%;
     max-height: 258px; }
   .charts-container .charts-c {
     grid-area: 2 / 2 / 3 / 3;
     background-color: blue;
     aspect-ratio: 1;
     max-width: 258px;
+    width: 100%;
     max-height: 258px; }
   .charts-container .charts-d {
     grid-area: 2 / 3 / 3 / 4;
-    background-color: pink;
-    aspect-ratio: 1;
+    background-color: #fbfbfb;
+    border-radius: 5px;
+    width: 100%;
     max-width: 258px;
-    max-height: 258px; }
+    max-height: 258px;
+    aspect-ratio: 1; }
   .charts-container .charts-e {
     grid-area: 1 / 4 / 3 / 5;
     background-color: green;
     max-width: 258px; }
 
-@-moz-document url-prefix() {
-  .charts-b,
-  .charts-c,
-  .charts-d {
-    height: calc( 154.5px + min(calc(100vh - 780px), calc(100vw - 1024px)) * 0.25 );
-    width: calc( 154.5px + min(calc(100vh - 780px), calc(100vw - 1024px)) * 0.25 ); } }
 /* Layout */
 header {
   display: flex;
@@ -92,7 +90,8 @@ header {
   justify-content: space-between;
   box-shadow: 0px 4px 4px #00000040;
   position: fixed;
-  width: 100%; }
+  width: 100%;
+  z-index: 100; }
   header #header-logo {
     width: 178px;
     height: 60.93px;
@@ -116,7 +115,7 @@ header {
   flex-direction: column;
   justify-content: center;
   box-shadow: 0px 4px 4px #00000040;
-  z-index: -10; }
+  z-index: 50; }
   #sidebar #sidebar-links-container {
     display: flex;
     flex-direction: column;

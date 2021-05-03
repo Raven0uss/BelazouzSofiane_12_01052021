@@ -68,11 +68,6 @@ class ActivityChart extends React.Component {
   render() {
     return (
       <ResponsiveContainer
-        // style={{
-        //   backgroundColor: "#FBFBFB",
-        //   padding: "24px 32px",
-        //   borderRadius: 5,
-        // }}
         width="100%"
         height="100%"
       >
