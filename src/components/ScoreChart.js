@@ -13,7 +13,7 @@ function CustomLabel(props) {
     <>
       <text
         x={cx + 3}
-        y={cy - 5}
+        y={cy - 15}
         fill="#20253A"
         textAnchor="middle"
         dominantBaseline="central"
@@ -30,7 +30,7 @@ function CustomLabel(props) {
       </text>
       <text
         x={cx}
-        y={cy + 25}
+        y={cy + 15}
         fill="#9B9EAC"
         textAnchor="middle"
         dominantBaseline="central"
@@ -47,7 +47,7 @@ function CustomLabel(props) {
       </text>
       <text
         x={cx}
-        y={cy + 50}
+        y={cy + 40}
         fill="#9B9EAC"
         textAnchor="middle"
         dominantBaseline="central"
@@ -79,21 +79,22 @@ class ScoreChart extends React.Component {
         <div
           style={{
             position: "absolute",
-            marginTop: 20,
-            marginLeft: 20,
+            marginTop: 6,
+            marginLeft: 8,
             fontWeight: 500,
             fontSize: 15,
           }}
         >
           Score
         </div>
-        <ResponsiveContainer debounce={1}>
+        <ResponsiveContainer debounce={0} width={"99%"}>
           <RadialBarChart
-            innerRadius="85%"
-            outerRadius="70%"
+            innerRadius="100%"
+            outerRadius="85%"
             data={[
               {
                 name: "score",
+                // score: 1,
                 score: this.props.scorePercentage,
                 fill: "#E60000",
               },
@@ -119,8 +120,7 @@ class ScoreChart extends React.Component {
               dataKey="score"
               cornerRadius={10}
               radius={100}
-              legendType="circle"
-              mask=""
+              isAnimationActive={false}
             />
           </RadialBarChart>
         </ResponsiveContainer>
