@@ -8,7 +8,6 @@ import {
 
 function CustomLabel(props) {
   const { cx, cy } = props.viewBox;
-  console.log(props);
   return (
     <>
       <text
@@ -67,41 +66,25 @@ function CustomLabel(props) {
 }
 
 class ScoreChart extends React.Component {
-  constructor(props) {
-    super(props);
-
-    console.log(props);
-  }
-
   render() {
     return (
       <>
-        <div
-          style={{
-            position: "absolute",
-            marginTop: "0.5%",
-            marginLeft: "0.5%",
-            fontWeight: 500,
-            fontSize: 15,
-          }}
-        >
-          Score
-        </div>
+        <div className="score-title">Score</div>
         <ResponsiveContainer debounce={0} width={"99%"}>
           <RadialBarChart
-            // margin={{
-            //   top: 30,
-            //   left: 0,
-            //   bottom: 10,
-            //   right: 10,
-            // }}
+            margin={{
+              top: 43,
+              left: 20,
+              bottom: 10,
+              right: 10,
+            }}
             innerRadius="100%"
             outerRadius="85%"
             data={[
               {
                 name: "score",
-                score: this.props.scorePercentage,
-                // score: 1,
+                // score: this.props.scorePercentage,
+                score: 1,
                 fill: "#E60000",
               },
             ]}
@@ -121,7 +104,7 @@ class ScoreChart extends React.Component {
             />
             <RadialBar
               minAngle={0}
-              label={<CustomLabel value1={"lol"} value2={"lol"} />}
+              label={<CustomLabel />}
               clockWise={true}
               dataKey="score"
               cornerRadius={10}

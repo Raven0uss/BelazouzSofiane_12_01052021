@@ -38,7 +38,7 @@ p {
     line-height: 24px;
     margin-top: 41px;
     margin-left: 109px;
-    margin-bottom: 50px; }
+    margin-bottom: 77px; }
 
 .charts-container {
   display: grid;
@@ -55,28 +55,23 @@ p {
     border-radius: 5px;
     box-shadow: 0px 2px 4px 0px #00000005;
     width: 100%; }
+  .charts-container .charts-b,
+  .charts-container .charts-c,
+  .charts-container .charts-d {
+    aspect-ratio: 1;
+    max-width: 258px;
+    width: 100%;
+    max-height: 258px;
+    border-radius: 5px; }
   .charts-container .charts-b {
     grid-area: 2 / 1 / 3 / 2;
-    background-color: red;
-    aspect-ratio: 1;
-    max-width: 258px;
-    width: 100%;
-    max-height: 258px; }
+    background-color: #ff0000; }
   .charts-container .charts-c {
     grid-area: 2 / 2 / 3 / 3;
-    background-color: blue;
-    aspect-ratio: 1;
-    max-width: 258px;
-    width: 100%;
-    max-height: 258px; }
+    background-color: #282d30; }
   .charts-container .charts-d {
     grid-area: 2 / 3 / 3 / 4;
-    background-color: #fbfbfb;
-    border-radius: 5px;
-    width: 100%;
-    max-width: 258px;
-    max-height: 258px;
-    aspect-ratio: 1; }
+    background-color: #fbfbfb; }
   .charts-container .charts-e {
     grid-area: 1 / 4 / 3 / 5;
     max-width: 258px; }
@@ -155,7 +150,8 @@ header {
 .activity-legend-container {
   display: flex;
   justify-content: space-between;
-  height: 80px; }
+  height: 80px;
+  margin-top: 24px; }
   .activity-legend-container .activity-legend-title {
     font-weight: 500;
     font-size: 15px;
@@ -271,5 +267,12 @@ header {
   flex-direction: column;
   justify-content: space-between;
   height: 100%; }
+
+.score-title {
+  position: absolute;
+  margin-top: 24px;
+  margin-left: 30px;
+  font-weight: 500;
+  font-size: 15px; }
 
 /*# sourceMappingURL=index.css.map */
