@@ -47,7 +47,8 @@ p {
   grid-column-gap: 30px;
   grid-row-gap: 30px;
   margin-left: 109px;
-  margin-right: 90px; }
+  margin-right: 90px;
+  max-width: 1440px; }
   .charts-container .charts-activity-container {
     grid-area: 1 / 1 / 2 / 4;
     background-color: #fbfbfb;
@@ -78,9 +79,14 @@ p {
     aspect-ratio: 1; }
   .charts-container .charts-e {
     grid-area: 1 / 4 / 3 / 5;
-    background-color: green;
     max-width: 258px; }
 
+@-moz-document url-prefix() {
+  .charts-b,
+  .charts-c,
+  .charts-d {
+    height: calc( 154.5px + min(calc(100vh - 780px), calc(100vw - 1024px)) * 0.25 );
+    width: calc( 154.5px + min(calc(100vh - 780px), calc(100vw - 1024px)) * 0.25 ); } }
 /* Layout */
 header {
   display: flex;
@@ -183,5 +189,87 @@ header {
     margin-bottom: 7px; }
     .tooltip-box .tooltip-label:last-of-type {
       margin-bottom: unset; }
+
+.counter-card {
+  background-color: #fbfbfb;
+  height: 124px;
+  display: flex;
+  border-radius: 5px; }
+  .counter-card .counter-card-icon-block {
+    display: flex;
+    border-radius: 6px;
+    margin: 32px;
+    margin-right: 24px;
+    height: 60px;
+    width: 60px;
+    align-items: center;
+    justify-content: center; }
+    .counter-card .counter-card-icon-block .counter-card-icon {
+      width: 20px; }
+  .counter-card .counter-card-content {
+    margin-top: 39px; }
+    .counter-card .counter-card-content .counter-card-value {
+      font-family: Roboto;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 24px;
+      letter-spacing: 0px;
+      text-align: left; }
+    .counter-card .counter-card-content .counter-card-label {
+      font-family: Roboto;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0px;
+      text-align: left;
+      color: #74798c;
+      margin-top: 2px; }
+
+@media screen and (max-width: 1290px) {
+  .counter-card {
+    height: 114px; }
+    .counter-card .counter-card-icon-block {
+      margin: 28px;
+      margin-right: 18px;
+      height: 50px;
+      width: 50px; }
+      .counter-card .counter-card-icon-block .counter-card-icon {
+        width: 20px; }
+    .counter-card .counter-card-content {
+      margin-top: 32px; }
+      .counter-card .counter-card-content .counter-card-value {
+        font-size: 18px;
+        line-height: 22px; }
+      .counter-card .counter-card-content .counter-card-label {
+        font-size: 12px;
+        line-height: 22px;
+        margin-top: 2px; } }
+@media screen and (max-width: 1180px) {
+  .counter-card {
+    height: 90px; }
+    .counter-card .counter-card-icon-block {
+      margin: 24px;
+      margin-left: 16px;
+      margin-right: 16px;
+      height: 42px;
+      width: 42px; }
+      .counter-card .counter-card-icon-block .counter-card-icon {
+        width: 18px; }
+    .counter-card .counter-card-content {
+      margin-top: 28px; }
+      .counter-card .counter-card-content .counter-card-value {
+        font-size: 14px;
+        line-height: 20px; }
+      .counter-card .counter-card-content .counter-card-label {
+        font-size: 10px;
+        line-height: 20px;
+        margin-top: 2px; } }
+#counter-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; }
 
 /*# sourceMappingURL=index.css.map */

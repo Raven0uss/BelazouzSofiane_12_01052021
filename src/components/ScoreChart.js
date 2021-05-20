@@ -79,8 +79,8 @@ class ScoreChart extends React.Component {
         <div
           style={{
             position: "absolute",
-            marginTop: 6,
-            marginLeft: 8,
+            marginTop: "0.5%",
+            marginLeft: "0.5%",
             fontWeight: 500,
             fontSize: 15,
           }}
@@ -89,13 +89,19 @@ class ScoreChart extends React.Component {
         </div>
         <ResponsiveContainer debounce={0} width={"99%"}>
           <RadialBarChart
+            // margin={{
+            //   top: 30,
+            //   left: 0,
+            //   bottom: 10,
+            //   right: 10,
+            // }}
             innerRadius="100%"
             outerRadius="85%"
             data={[
               {
                 name: "score",
-                // score: 1,
                 score: this.props.scorePercentage,
+                // score: 1,
                 fill: "#E60000",
               },
             ]}

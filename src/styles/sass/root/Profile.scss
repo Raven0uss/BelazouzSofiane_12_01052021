@@ -32,7 +32,7 @@
   grid-row-gap: 30px;
   margin-left: 109px;
   margin-right: 90px;
-  //   max-width: 1440px;
+  max-width: 1440px;
 
   .charts-activity-container {
     grid-area: 1 / 1 / 2 / 4;
@@ -41,7 +41,6 @@
     border-radius: 5px;
     box-shadow: 0px 2px 4px 0px #00000005;
     width: 100%;
-    // max-width: 940px;
   }
 
   .charts-b {
@@ -71,21 +70,33 @@
   }
   .charts-e {
     grid-area: 1 / 4 / 3 / 5;
-    background-color: green;
     max-width: 258px;
   }
 }
 
 // Aspect ratio doesn't work on Firefox, so I had to do some math to get
-// @-moz-document url-prefix() {
-//   .charts-b,
-//   .charts-c,
-//   .charts-d {
-//     height: calc(
-//       154.5px + min(calc(100vh - 780px), calc(100vw - 1024px)) * 0.25
-//     );
-//     width: calc(
-//       154.5px + min(calc(100vh - 780px), calc(100vw - 1024px)) * 0.25
-//     );
+@-moz-document url-prefix() {
+  .charts-b,
+  .charts-c,
+  .charts-d {
+    height: calc(
+      154.5px + min(calc(100vh - 780px), calc(100vw - 1024px)) * 0.25
+    );
+    width: calc(
+      154.5px + min(calc(100vh - 780px), calc(100vw - 1024px)) * 0.25
+    );
+  }
+}
+
+// @media screen and (min-width: 1440px) {
+//   #profile-container {
+//     .greetings-message {
+//       margin-left: 109px;
+//     }
+
+//     .congrats-message {
+//       margin-left: auto;
+//       margin-right: auto;
+//     }
 //   }
 // }
