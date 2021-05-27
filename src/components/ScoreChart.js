@@ -12,7 +12,7 @@ function CustomLabel(props) {
     <>
       <text
         x={cx + 3}
-        y={cy - 15}
+        y={cy - 20}
         fill="#20253A"
         textAnchor="middle"
         dominantBaseline="central"
@@ -20,7 +20,7 @@ function CustomLabel(props) {
       >
         <tspan
           alignmentBaseline="middle"
-          fontSize="26"
+          fontSize="24"
           fontWeight={700}
           fontFamily="Roboto"
         >
@@ -29,7 +29,7 @@ function CustomLabel(props) {
       </text>
       <text
         x={cx}
-        y={cy + 15}
+        y={cy + 8}
         fill="#9B9EAC"
         textAnchor="middle"
         dominantBaseline="central"
@@ -37,7 +37,7 @@ function CustomLabel(props) {
       >
         <tspan
           alignmentBaseline="middle"
-          fontSize="16"
+          fontSize="15"
           fontWeight={500}
           fontFamily="Roboto"
         >
@@ -46,7 +46,7 @@ function CustomLabel(props) {
       </text>
       <text
         x={cx}
-        y={cy + 40}
+        y={cy + 31}
         fill="#9B9EAC"
         textAnchor="middle"
         dominantBaseline="central"
@@ -54,7 +54,7 @@ function CustomLabel(props) {
       >
         <tspan
           alignmentBaseline="middle"
-          fontSize="16"
+          fontSize="15"
           fontWeight={500}
           fontFamily="Roboto"
         >
@@ -73,18 +73,19 @@ class ScoreChart extends React.Component {
         <ResponsiveContainer debounce={0} width={"99%"}>
           <RadialBarChart
             margin={{
-              top: 43,
-              left: 20,
+              top: 35,
+              left: 10,
               bottom: 10,
               right: 10,
             }}
+            className="test-chart"
             innerRadius="100%"
-            outerRadius="85%"
+            outerRadius="90%"
             data={[
               {
                 name: "score",
-                // score: this.props.scorePercentage,
-                score: 1,
+                score: this.props.scorePercentage,
+                // score: 1,
                 fill: "#E60000",
               },
             ]}
