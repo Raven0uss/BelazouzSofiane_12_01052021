@@ -2,14 +2,10 @@ import React from "react";
 import { ResponsiveContainer, LineChart, XAxis, Line, Tooltip } from "recharts";
 
 const CustomTooltip = ({ payload, active }) => {
-  if (active) {
+  if (active && payload && payload.length) {
     return (
       <>
-        <div
-          style={{
-            backgroundColor: "#fff",
-          }}
-        >
+        <div className="sessions-tooltip">
           <p>{payload[0].value}min</p>
         </div>
       </>
@@ -22,7 +18,6 @@ class SessionsChart extends React.Component {
   constructor(props) {
     super(props);
 
-    console.log(props);
     this.days = { 1: "L", 2: "M", 3: "M", 4: "J", 5: "V", 6: "S", 7: "D" };
   }
 
@@ -39,7 +34,7 @@ class SessionsChart extends React.Component {
               top: 50,
               right: 0,
               left: 0,
-              bottom: 5,
+              bottom: 20,
             }}
           >
             <defs>
@@ -57,6 +52,9 @@ class SessionsChart extends React.Component {
               tickFormatter={(value) => this.days[value]}
               stroke="#ffffff80"
               tickMargin={10}
+              fontFamily="Roboto"
+              fontSize="15px"
+              fontWeight="500"
             />
             <Line
               type="monotone"
@@ -67,7 +65,7 @@ class SessionsChart extends React.Component {
               stroke="url(#colorUv)"
             />
             <Tooltip
-              cursor={{ stroke: "rgba(0, 0, 0, 0.1)", strokeWidth: 10 }}
+              cursor={{ stroke: "rgba(0, 0, 0, 0.1)", strokeWidth: 1 }}
               content={<CustomTooltip />}
             />
           </LineChart>

@@ -1,0 +1,21 @@
+.performance-chart .recharts-layer .recharts-polar-angle-axis-tick {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 1250px) {
+  .performance-chart .recharts-layer .recharts-polar-angle-axis-tick {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .performance-chart .recharts-layer .recharts-polar-angle-axis-tick {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .performance-chart .recharts-layer .recharts-polar-angle-axis-tick {
+    font-size: 8px;
+  }
+}

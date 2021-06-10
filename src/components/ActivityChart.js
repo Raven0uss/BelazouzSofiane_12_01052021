@@ -67,10 +67,7 @@ class ActivityChart extends React.Component {
 
   render() {
     return (
-      <ResponsiveContainer
-        width="100%"
-        height="100%"
-      >
+      <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={this.data}
           margin={{
@@ -94,6 +91,7 @@ class ActivityChart extends React.Component {
             dx={20}
             tickLine={false}
             axisLine={false}
+            tickCount={3}
           />
           <Tooltip content={<CustomTooltip />} cursor={{ fill: "#C4C4C480" }} />
           <Bar dataKey="kg" fill="#282D30" barSize={7} radius={[3, 3, 0, 0]} />
