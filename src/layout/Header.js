@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../assets/logo.png";
 
+// Links for the header
 const headerLinks = [
   {
     id: "home",
@@ -20,6 +21,11 @@ const headerLinks = [
   },
 ];
 
+/**
+ * Header Layout
+ * @date 2021-06-11
+ * @returns {Component} - JSX React Component
+ */
 class Header extends React.Component {
   render() {
     return (

@@ -4,6 +4,7 @@ import swimIcon from "../assets/swim-icon.png";
 import cycleIcon from "../assets/cycle-icon.png";
 import dumbbellIcon from "../assets/dumbbell-icon.png";
 
+// Links with ID and icon for SideMenu
 const sideLinks = [
   {
     id: "yoga",
@@ -23,6 +24,11 @@ const sideLinks = [
   },
 ];
 
+/**
+ * SideBar Layout
+ * @date 2021-06-11
+ * @returns {Component} - JSX React Component
+ */
 class SideBar extends React.Component {
   render() {
     return (

@@ -9,8 +9,7 @@ body,
   flex-direction: column;
   flex-basis: 100%;
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -webkit-font-smoothing: antialiased; }
 
 p {
   margin-block-start: unset;
@@ -39,6 +38,9 @@ p {
     margin-top: 41px;
     margin-left: 109px;
     margin-bottom: 77px; }
+
+.charts-block-container {
+  height: 100%; }
 
 .charts-container {
   display: grid;
@@ -138,7 +140,8 @@ header {
   #sidebar .copyright-text {
     color: #fff;
     writing-mode: vertical-rl;
-    transform: rotate(180deg);
+    -webkit-transform: rotate(0.5turn);
+    transform: rotate(0.5turn);
     align-self: center;
     font-size: 12px;
     line-height: 24px;

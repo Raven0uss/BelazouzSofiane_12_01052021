@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {
   RadarChart,
   PolarGrid,
@@ -7,6 +8,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+// Labels for the PolarAngleAxis ticks
 const kindLabels = {
   1: "Cardio",
   2: "Energie",
@@ -16,6 +18,18 @@ const kindLabels = {
   6: "Intensité",
 };
 
+/**
+ * PerformanceChart
+ * @date 2021-06-11
+ * @param {Object} props - Props
+ * @param {Object} props.performances
+ * @param {number} props.performances.userId - ID of user
+ * @param {Array} props.performances.data - Data for each kind
+ * @param {number} props.performances.data[].value - Value of the performance
+ * @param {number} props.performances.data[].kind - ID for the performance kind between 1 and 6
+ * @param {Object} props.performances.kind- Each kind, with ID and value associated
+ * @returns {Component} - JSX React Component
+ */
 class PerformanceChart extends React.Component {
   constructor(props) {
     super(props);
@@ -57,5 +71,18 @@ class PerformanceChart extends React.Component {
     );
   }
 }
+
+PerformanceChart.propTypes = {
+  performances: PropTypes.shape({
+    userId: PropTypes.number,
+    kind: PropTypes.objectOf(PropTypes.string),
+    data: PropTypes.arrayOf(
+      PropTypes.shape({
+        value: PropTypes.number,
+        kind: PropTypes.number,
+      })
+    ),
+  }),
+};
 
 export default PerformanceChart;

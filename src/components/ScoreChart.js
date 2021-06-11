@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {
   RadialBar,
   RadialBarChart,
@@ -6,6 +7,12 @@ import {
   PolarAngleAxis,
 } from "recharts";
 
+/**
+ * CustomLabel for ScoreChart
+ * @date 2021-06-11
+ * @param {Object} props - Props for customLabel
+ * @returns {Component} - JSX React Component
+ */
 function CustomLabel(props) {
   const { cx, cy } = props.viewBox;
   return (
@@ -65,6 +72,13 @@ function CustomLabel(props) {
   );
 }
 
+/**
+ * ScoreChart
+ * @date 2021-06-11
+ * @param {Object} props - Props
+ * @param {number} props.scorePercentage - Percentage between 0 and 1 for score
+ * @returns {Component} - JSX React Component
+ */
 class ScoreChart extends React.Component {
   render() {
     return (
@@ -85,7 +99,6 @@ class ScoreChart extends React.Component {
               {
                 name: "score",
                 score: this.props.scorePercentage,
-                // score: 1,
                 fill: "#E60000",
               },
             ]}
@@ -118,5 +131,9 @@ class ScoreChart extends React.Component {
     );
   }
 }
+
+ScoreChart.propTypes = {
+  scorePercentage: PropTypes.number,
+};
 
 export default ScoreChart;

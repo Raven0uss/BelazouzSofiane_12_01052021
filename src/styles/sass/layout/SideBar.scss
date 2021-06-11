@@ -13,7 +13,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    // margin-top: -105px;
 
     .sidebar-link {
       width: 64px;
@@ -39,7 +38,8 @@
   .copyright-text {
     color: #fff;
     writing-mode: vertical-rl;
-    transform: rotate(180deg);
+    -webkit-transform: rotate(0.5turn);
+    transform: rotate(0.5turn);
     align-self: center;
     font-size: 12px;
     line-height: 24px;

@@ -12,6 +12,11 @@ import PerformanceChart from "./components/PerformanceChart";
 import ScoreChart from "./components/ScoreChart";
 import SessionsChart from "./components/SessionsChart";
 
+/**
+ * Profile Page
+ * @date 2021-06-11
+ * @returns {Component} - JSX React Component
+ */
 class Profile extends React.Component {
   constructor(props) {
     super(props);
@@ -26,20 +31,18 @@ class Profile extends React.Component {
     };
   }
 
+  // Fetching the data for the Profile page
   async componentDidMount() {
     const { data: user, error: errorUser } = await getUser(userId);
     const { data: activity, error: errorActivity } = await getUserActivity(
       userId
     );
-    const {
-      data: averageSessions,
-      error: errorAverageSessions,
-    } = await getUserAverageSessions(userId);
-    const {
-      data: performance,
-      error: errorPerformance,
-    } = await getUserPerformance(userId);
+    const { data: averageSessions, error: errorAverageSessions } =
+      await getUserAverageSessions(userId);
+    const { data: performance, error: errorPerformance } =
+      await getUserPerformance(userId);
 
+    // Check errors provided by API
     const error =
       (errorUser ?? false) &&
       (errorActivity ?? false) &&
@@ -73,11 +76,7 @@ class Profile extends React.Component {
           </p>
         </div>
 
-        <div
-          style={{
-            height: "100%",
-          }}
-        >
+        <div className="charts-block-container">
           <div className="charts-container">
             <div className="charts-activity-container">
               <ActivityChart data={this.state.activity.sessions} />

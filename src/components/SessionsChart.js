@@ -1,6 +1,15 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { ResponsiveContainer, LineChart, XAxis, Line, Tooltip } from "recharts";
 
+/**
+ * CustomTooltip for SessionsChart
+ * @date 2021-06-11
+ * @param {Object} props - Props for customTootlip
+ * @param {boolean} props.active - Check if the tooltip has to be displayed
+ * @param {Array} props.payload - Values to be displayed in tooltip
+ * @returns {Component} - JSX React Component
+ */
 const CustomTooltip = ({ payload, active }) => {
   if (active && payload && payload.length) {
     return (
@@ -14,10 +23,22 @@ const CustomTooltip = ({ payload, active }) => {
   return null;
 };
 
+/**
+ * SessionsChart
+ * @date 2021-06-11
+ * @param {Object} props - Props
+ * @param {Array} props.sessions - Array of different sessions of last 7 days
+ * @param {number} props.sessions[].day - Date of the data
+ * @param {number} props.sessions[].sessionsLength - Duration of the session for the day
+ * @returns {Component} - JSX React Component
+ */
 class SessionsChart extends React.Component {
   constructor(props) {
     super(props);
 
+    console.log(props);
+
+    // Object with keys related to day
     this.days = { 1: "L", 2: "M", 3: "M", 4: "J", 5: "V", 6: "S", 7: "D" };
   }
 
@@ -27,8 +48,6 @@ class SessionsChart extends React.Component {
         <div className="sessions-title">Durée moyenne des sessions</div>
         <ResponsiveContainer debounce={0} width={"99%"}>
           <LineChart
-            // width={500}
-            // height={300}
             data={this.props.sessions}
             margin={{
               top: 50,
@@ -59,7 +78,6 @@ class SessionsChart extends React.Component {
             <Line
               type="monotone"
               dataKey="sessionLength"
-              // stroke="#ffffff80"
               strokeWidth={2}
               dot={false}
               stroke="url(#colorUv)"
@@ -74,5 +92,14 @@ class SessionsChart extends React.Component {
     );
   }
 }
+
+SessionsChart.propTypes = {
+  sessions: PropTypes.arrayOf(
+    PropTypes.shape({
+      day: PropTypes.number,
+      sessionsLength: PropTypes.number,
+    })
+  ),
+};
 
 export default SessionsChart;

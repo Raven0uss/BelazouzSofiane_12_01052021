@@ -1,5 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
 
+/**
+ * Format value displayed for CounterCard
+ * @date 2021-06-11
+ * @param {number} value - Value to be formatted
+ * @returns {string} - Returns formatted value
+ */
 const formatValueCounter = (value) => {
   const valueString = `${value}`;
   if (value > 1000)
@@ -9,6 +16,18 @@ const formatValueCounter = (value) => {
   return value;
 };
 
+/**
+ * CounterCard
+ * @date 2021-06-11
+ * @param {Object} props - Props
+ * @param {string} props.label - Label of card
+ * @param {string} props.id - id of card
+ * @param {number} props.value - Value to be displayed in card
+ * @param {string} props.icon - base64 icon to be displayed in the card
+ * @param {string} props.unit - unit of the value
+ * @param {string} props.bgIcon - backgroundColor for the icon of the card
+ * @returns {Component} - JSX React Component
+ */
 class CounterCard extends React.Component {
   render() {
     return (
@@ -37,5 +56,14 @@ class CounterCard extends React.Component {
     );
   }
 }
+
+CounterCard.propTypes = {
+  label: PropTypes.string,
+  id: PropTypes.string,
+  value: PropTypes.number,
+  icon: PropTypes.string,
+  unit: PropTypes.string,
+  bgIcon: PropTypes.string,
+};
 
 export default CounterCard;

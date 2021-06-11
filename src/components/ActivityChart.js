@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {
   ResponsiveContainer,
   BarChart,
@@ -10,6 +11,12 @@ import {
   Legend,
 } from "recharts";
 
+/**
+ * Format entry data for ActivityChart
+ * @date 2021-06-11
+ * @param {Array} data - Array with the data
+ * @returns {Array} - Returns formatted data for graph
+ */
 const formatData = (data) => {
   const dataList = data ?? [];
   return dataList.map((item, index) => ({
@@ -19,7 +26,15 @@ const formatData = (data) => {
   }));
 };
 
-const CustomTooltip = ({ active, payload, label }) => {
+/**
+ * CustomTooltip for ActivityChart
+ * @date 2021-06-11
+ * @param {Object} props - Props for customTootlip
+ * @param {boolean} props.active - Check if the tooltip has to be displayed
+ * @param {Array} props.payload - Values to be displayed in tooltip
+ * @returns {Component} - JSX React Component
+ */
+const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
       <div className="tooltip-box">
@@ -32,6 +47,13 @@ const CustomTooltip = ({ active, payload, label }) => {
   return null;
 };
 
+/**
+ * CustomLegend for ActivityChart
+ * @date 2021-06-11
+ * @param {Object} props - Props for customLegend
+ * @param {Array} props.payload - Values to be displayed in legend
+ * @returns {Component} - JSX React Component
+ */
 const CustomLegend = (props) => {
   const { payload } = props;
 
@@ -58,6 +80,16 @@ const CustomLegend = (props) => {
   );
 };
 
+/**
+ * ActivityChar
+ * @date 2021-06-11
+ * @param {Object} props - Props
+ * @param {Array} props.data - Data to be formatted.
+ * @param {string} props.data[].day - Date of the data
+ * @param {number} props.data[].kilogram - Kg for the date
+ * @param {string} props.data[].calories - Calories spent for the day
+ * @returns {Component} - JSX React Component
+ */
 class ActivityChart extends React.Component {
   constructor(props) {
     super(props);
@@ -106,5 +138,15 @@ class ActivityChart extends React.Component {
     );
   }
 }
+
+ActivityChart.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      day: PropTypes.string,
+      kilogram: PropTypes.number,
+      calories: PropTypes.number,
+    })
+  ),
+};
 
 export default ActivityChart;
