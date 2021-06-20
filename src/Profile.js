@@ -49,7 +49,6 @@ class Profile extends React.Component {
       (errorAverageSessions ?? false) &&
       (errorPerformance ?? false);
 
-    console.log(user);
     this.setState({
       loading: false,
       error,
