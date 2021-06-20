@@ -36,8 +36,6 @@ class SessionsChart extends React.Component {
   constructor(props) {
     super(props);
 
-    console.log(props);
-
     // Object with keys related to day
     this.days = { 1: "L", 2: "M", 3: "M", 4: "J", 5: "V", 6: "S", 7: "D" };
   }
